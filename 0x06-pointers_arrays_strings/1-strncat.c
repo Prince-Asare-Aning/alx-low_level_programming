@@ -1,29 +1,35 @@
 #include "main.h"
-
 /**
- * _strncat - a function that concatenates two strings
- * @dest:copy to
- * @src: copy from
- * @n: n
- * Return: Always 0 (Success)
+ *_strncat- append string
+ *@dest: checked
+ *@src: checked
+ *@n: checked
+ *Return: dest
  */
+
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, co;
+	int i, j;
 
-	for (i = 0; dest[i] != '\0'; i++)
+	i = 0;
+
+	j = 0;
+
+	while (*(dest + i) != '\0')
 	{
+		i++;
+		j++;
 	}
 
-	for (co = 0; co < n; co++)
+	i = 0;
+
+	while (*(src + i) != *(src + n))
 	{
-		dest[i + co] = src[co];
-		if (src[co] == '\0')
-			co = n;
+		dest[j] = src[i];
+		i++;
+		j++;
 	}
+	dest[j] = '\0';
+
 	return (dest);
 }
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Term
